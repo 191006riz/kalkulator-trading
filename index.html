@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Quantity Trading</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Tombol Toggle Mode dan Memory Log -->
+    <div class="top-bar">
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i id="theme-icon" class="fas fa-moon"></i>
+        </div>
+        <div class="memory-icon" onclick="toggleMemory()">
+            <i class="fas fa-clock"></i>
+        </div>
+    </div>
+    
+    <!-- Container Utama -->
+    <div class="container">
+        <h2><i class="fas fa-calculator"></i> Kalkulator Quantity Trading</h2>
+        <p class="desc">Hitung jumlah quantity yang bisa ditradingkan secara otomatis berdasarkan modal, entry, dan SL.</p>
+
+        <div class="form-group">
+            <label><i class="fas fa-chart-line"></i> Pair:</label>
+            <input type="text" id="pair" placeholder="Masukkan pair (contoh: BTC/USDT)">
+        </div>
+        
+        <div class="form-group">
+            <label><i class="fas fa-wallet"></i> Modal ($):</label>
+            <input type="number" id="modal" placeholder="Masukkan modal">
+        </div>
+        
+        <div class="form-group">
+            <label><i class="fas fa-arrow-alt-circle-up"></i> Entry Harga:</label>
+            <input type="number" id="entry" placeholder="Masukkan harga entry">
+        </div>
+        
+        <div class="form-group">
+            <label><i class="fas fa-bullseye"></i> Take Profit di Harga:</label>
+            <input type="number" id="tp" placeholder="Masukkan harga TP">
+        </div>
+        
+        <div class="form-group">
+            <label><i class="fas fa-shield-alt"></i> Stop Loss di Harga:</label>
+            <input type="number" id="sl" placeholder="Masukkan harga SL">
+        </div>
+        
+        <button onclick="hitungQuantity()"><i class="fas fa-calculator"></i> Hitung</button>
+        
+        <h3>Hasil:</h3>
+        <div id="hasil" class="hasil-container"></div>
+    </div>
+    
+    <!-- Memory Log Container -->
+    <div class="memory-container" id="memory-container">
+        <h3><i class="fas fa-history"></i> Memory Log</h3>
+        <ul id="memory-list"></ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
